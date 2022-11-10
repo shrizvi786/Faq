@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+     <isExposed>true</isExposed>
+    <masterLabel>ZT Contact Form</masterLabel>
+    <targets>
+      <target>lightning__AppPage</target>
+    <target>lightning__RecordPage</target>
+    <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>  
+        <targetConfig targets="lightningCommunity__Default">
+        <property name="overallpadding" type="String" label="Overallpadding"/>
+        <property name="headeradjustment" type="String"  label="Header adjustment" datasource="Left , Center , right"/>
+        <property name="headerfontadjustment" type="String"  label="Header font adjustment"/>
+        <property name="headerfontweightadjustment" type="String" label="Header font weight"></property>
+        <property name="subheaderfontweightadjustments" type="String" label="Sub heading font-weight Adjustment"></property>
+        <property name="subheaderfontadjustments" type="String" label="Sub heading font Adjustment"></property>
+        <property name="heading" type="String" label="Heading" default="Main-Heading"></property>
+        <property name="subheading" type="String" label="Sub-Heading" default="Sub-Heading"></property>
+        <property name="firstname" type="String" default="First Name" label="provide First Name"/>
+        <property name="lastname" type="String" default="Last Name" label="provide Last Name"/>
+        <property name="contact" type="String" default="Contact No" label="provide Contact"/>
+        <property name="emailId" type="String" default="Email" label="provide Your Email"/>
+        <property name="description" type="String" default="Description" label="provide Department Name"/>
+        <property name="buttonname" type="String" default="Submit" label="Button Name"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

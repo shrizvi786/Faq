@@ -1,0 +1,88 @@
+<template>
+  <lightning-card>
+    <div slot="title" class="slds-size_6-of-12">
+      <p class="headerfontadjustments">
+        <!-- <lightning-icon
+            icon-name="standard:contact"
+            size="small"
+          ></lightning-icon> -->
+        {heading}
+      </p>
+      <p class="subheaderfontadjustments">{subheading}</p>
+    </div>
+    <div class="slds-grid slds-wrap">
+      <div
+        class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium"
+      >
+        <div class="slds-form-element">
+          <lightning-input
+            value={firstName}
+            onchange={contactChangeVal}
+            placeholder={firstname}
+            name="fname"
+          ></lightning-input>
+        </div>
+      </div>
+      <div
+        class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium"
+      >
+        <div class="slds-form-element">
+          <lightning-input
+            value={lastName}
+            onchange={contactChangeVal}
+            placeholder={lastname}
+            name="lname"
+          ></lightning-input>
+        </div>
+      </div>
+      <div
+        class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium"
+      >
+        <div class="slds-form-element">
+          <lightning-input
+            value={Contact}
+            onchange={contactChangeVal}
+            placeholder={contact}
+            name = "contactUs"
+          ></lightning-input>
+        </div>
+      </div>
+      <div
+        class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium"
+      >
+        <div class="slds-form-element">
+          <lightning-input
+            value={email}
+            onchange={contactChangeVal}
+            placeholder={emailId}
+            name="email"
+          ></lightning-input>
+        </div>
+      </div>
+      <div
+        class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium"
+      >
+        <div class="slds-form-element">
+          <lightning-input
+            value={Description}
+            conchange={contactChangeVal}
+            placeholder={description}
+            name="message"
+          ></lightning-input>
+        </div>
+      </div>
+      <div
+        class="slds-p-horizontal--small slds-col slds-size_3-of-12 slds-m-bottom--medium"
+      >
+        <div class="slds-form-element slds-p-top_large">
+          <lightning-button
+            label={buttonname}
+            variant="brand"
+            onclick={insertContactAction}
+            placeholder="Create Contact Record"
+          ></lightning-button>
+        </div>
+      </div>
+    </div>
+  </lightning-card>
+</template>

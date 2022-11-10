@@ -1,0 +1,14 @@
+p.headerfontadjustments {
+  font-size: var(--my-headerfontadjustment) !important;
+  font-weight: var(--my-headerfontweightadjustment) !important;
+}
+p.subheaderfontadjustments {
+  font-size: var(--my-subheaderfontadjustment);
+  font-weight: var(--my-subheaderfontweightadjustment);
+}
+
+/* .slds-input {
+    border: none;
+    border-bottom: 1px solid !important;
+    border-radius: inherit !important;
+  } */
