@@ -1,0 +1,21 @@
+--------------- Main Contact form Link ------------
+
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t2w0000097yh6
+
+--------------- Sign up ------------
+
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5i0000005ius
+
+--------------login----------------------------------
+
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5i000000UrkY
+
+--------------forgot password link -------------
+
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5i000000Urme
+
+-------------  Image Ejection link ------------------
+
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5i000000UrnX
+
+

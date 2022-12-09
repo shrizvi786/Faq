@@ -1,0 +1,81 @@
+
+1. Test Class for a trigger  when we have to work use this.
+@isTest(SeeAllData=true)
+public class SyncScheduleRecordTest {
+    @IsTest private static void testTrigger()
+    {
+       StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource('SyncSFWithAWS');
+        mock.setStatusCode(200);
+        mock.setHeader('Content-Type', 'application/json;charset=UTF-8');
+        // Associate the callout with a mock response
+        Test.setMock(HttpCalloutMock.class, mock);
+       Test.startTest();
+       Schedule__c primaryObject= new Schedule__c(School_Year__c='21-22');
+       insert primaryObject;
+       update primaryObject;
+       delete primaryObject;
+       Test.stopTest(); 
+       System.assertEquals(primaryObject.School_Year__c,'21-22');   
+ 	}    
+}
+
+
+
+
+2. one more way same as above difficulty in understanding
+
+@isTest
+private class TestClass_ScheduleDetails implements HttpCalloutMock
+{
+        static testmethod void test1()
+        {
+            Test.setMock(HttpCalloutMock.class, new TestClass_ScheduleDetails());
+            Schedule_Details__c sd = new Schedule_Details__c();
+            sd.Student_Name__c = 'Test';
+            insert sd;
+            system.assertEquals('Test', sd.Student_Name__c);
+            
+            Test.startTest();
+            
+            update sd;
+            delete sd;
+            
+            Test.stopTest();
+        }
+    
+         public HttpResponse respond(HttpRequest req)
+        {
+            string fullJson = 'Your json response';
+            HttpResponse res = new HttpResponse();
+            res.setHeader('Content-type', 'text/json');
+            res.setBody(fullJson);
+            res.setStatusCode(200);
+            return res;
+        }
+    
+}
+
+
+
+
+
+// Test for method
+@isTest
+public class ManagedContentCtrlTest {
+    @isTest(SeeAllData=true)
+    public static void testManagedContentCtrlTest(){
+        String contentId = 'MCZW7KFCFBYBFAZD7TH4ABOKEFO4';
+        Integer page = 0;
+        Integer pageSize = 1;
+        String language = 'en_US';
+        String filterby = '';
+        String networkName;
+        Test.startTest();
+        List<Network> nlist = new List<Network>();           
+        nlist = [select id,name from Network ORDER BY name DESC Limit 1];
+        ManagedContentCtrlr.getContent(contentId,page,pageSize,language,filterby,nlist[0].name);   
+        Test.stopTest();
+    }
+
+}

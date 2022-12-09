@@ -1,0 +1,12 @@
+.slds-input {background: rgb(79,92,136);
+    border-radius: var(--my-borderradius) !important;
+    box-shadow: none;
+    border: none;
+    color: white;}
+.slds-input::placeholder {color :#1D253E;
+font-size : 16px;}
+.slds-input:focus {background: white;
+                   color: black;}
+              
+
+

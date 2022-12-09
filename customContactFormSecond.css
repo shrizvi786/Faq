@@ -1,0 +1,16 @@
+.slds-form-element__control.slds-grow {
+                                       padding: 0%;
+}
+.slds-input {   border: none;
+                border-bottom: 1px solid !important;
+                border-radius: inherit !important;
+                box-shadow: none;
+background : white ; }
+.slds-input:focus {background-color : white;}
+
+.slds-button .slds-button_neutral {border: none;
+    background: lightseagreen;
+    }
+.slds-textarea {
+       background : white ; }
+.slds-textarea:focus {background-color : white;}
