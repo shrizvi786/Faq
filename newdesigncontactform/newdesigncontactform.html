@@ -1,0 +1,146 @@
+<template>
+    <c-custom-toast auto-close-time="3000"></c-custom-toast>
+  
+<div class="container-fluid d-flex align-items-center justify-content-center maindiv containerPadding">
+      <div class="spinner">
+        <template if:true={isLoading}>
+             <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+             </lightning-spinner>
+        </template>
+    </div>
+    <div class="row shadow m-3 rowPadding" >
+    <!-- <div slot="title" class="slds-size_6-of-12">
+        <p class="headerfontadjustments">
+        
+        {heading}
+        </p>
+        <p class="subheaderfontadjustments">{subheading}</p>
+    </div> -->
+    
+    <div class="col-lg-6 d-grid align-items-center justify-content-start  " style="margin-left: -10px;">
+        <div class="my-5">
+        <div class="parastart">
+            <div class="paraheading">
+                <p class="paraheading_1">
+                    Just say Hello
+                </p>
+            </div>
+            <div>
+                <p class="paraheading_2">Let us Know more about you</p>
+            </div>
+
+        </div>
+    <div class="row mt-5">
+   
+        <div class="  col-md-6" style="margin: -26px 0 0 0;">
+            <lightning-input
+            style=" width: 107%;"
+            value={firstName}
+            onchange={contactChangeVal}
+            placeholder={firstname}
+            name="fname"
+            class="frstname"
+            ></lightning-input>
+        </div>
+
+        
+        <div class="col-md-6" style="margin: -26px 0 0 0;">
+            <lightning-input
+            style=" width: 107%;"
+            value={lastName}
+            onchange={contactChangeVal}
+            placeholder={lastname}
+            name="lname"
+            class="lstname"
+            ></lightning-input>
+        </div>
+    
+        </div>
+
+        <div class=" row" >
+       
+        <div class=" col-md-6" style="margin: -26px 0 0 0;">
+            <lightning-input
+            style=" width: 107%;"
+            value={Contact}
+            onchange={contactChangeVal}
+            placeholder={contact}
+            name="contactUs"
+            class="cnt"
+            ></lightning-input>
+        </div>
+        
+      
+        <div class=" col-md-6" style="margin: -26px 0 0 0;">
+            <lightning-input
+            value={email}
+            style=" width: 107%;"
+            onchange={contactChangeVal}
+            placeholder={enteremail}
+            name="email"
+            class="eml"
+            ></lightning-input>
+        </div>
+        
+    </div>
+
+     
+        <div class=""  >
+            <div class="" style="margin: -26px 0 0 0;">
+                <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> -->
+            <textarea
+            rows="3"
+            
+            onchange={contactChangeVal}
+            placeholder={description}
+            name="message"
+            class="desc form-control textareaWidth"
+            ></textarea>
+        </div>
+        </div>
+        
+       
+        <div class="mt-3">
+            <lightning-button
+            label={buttonname}
+            variant="brand"
+            onclick={insertContactAction}
+            placeholder="Create Contact Record"
+            ></lightning-button>
+        </div>
+        
+      <!-- half secttion -->
+      
+    </div>
+</div>
+    <div class="col-lg-6 my-5  d-grid align-items-center rightColMargin justify-content-end  ">
+        <div style="float: left;">
+        <div class="halfsectionpara">
+            <p class="halfsectionpara_1">Contact <br> Information</p>
+        </div>
+        <div class ="address">
+            <p style="margin-top: 8px;
+            line-height: 16px;
+            ">77 Baker Street <br> Bondowso, 87655 <br> Indonesia</p>
+            <p style="margin-top: 8px;
+            ">Call Us: +62813446100</p>
+            <p style="margin-top: 8px;line-height: 16px;
+            ">We are open from Monday - Friday <br>08:00 am - 05:00 pm</p>
+        </div>
+        <div class="social">
+            <p>Follow US</p>
+        </div>
+        <div class="socialicon">
+            <p >Facebook</p>
+            <p style="margin: 0 0 0 10px;">Instagram</p>
+            <p style="margin: 0 0 0 10px;">Vimeo</p>
+        </div>
+    </div>
+
+      </div>
+    
+    
+</div>
+    
+</div>
+</template>

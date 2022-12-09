@@ -12,19 +12,25 @@
     </targets>
     <targetConfigs>  
         <targetConfig targets="lightningCommunity__Default">
-        <property name="overallpadding" type="String" label="Overallpadding"/>
-        <property name="headeradjustment" type="String"  label="Header adjustment" datasource="Left , Center , right"/>
-        <property name="headerfontadjustment" type="String"  label="Header font adjustment"/>
-        <property name="headerfontweightadjustment" type="String" label="Header font weight"></property>
-        <property name="subheaderfontweightadjustments" type="String" label="Sub heading font-weight Adjustment"></property>
-        <property name="subheaderfontadjustments" type="String" label="Sub heading font Adjustment"></property>
-        <property name="heading" type="String" label="Heading" default="Main-Heading"></property>
-        <property name="subheading" type="String" label="Sub-Heading" default="Sub-Heading"></property>
-        <property name="firstname" type="String" default="First Name" label="provide First Name"/>
-        <property name="lastname" type="String" default="Last Name" label="provide Last Name"/>
-        <property name="contact" type="String" default="Contact No" label="provide Contact"/>
-        <property name="emailId" type="String" default="Email" label="provide Your Email"/>
-        <property name="description" type="String" default="Description" label="provide Department Name"/>
+        <!-- Componet One -->
+        <property name="secondform" type="String" datasource="Form_1,Form_2" label="Form Variants"></property>
+        <property name="background" type="color" label="Background" default="rgb(244,107,149)"></property>
+        <property name="headingcolor" type="color" label="Heading-Color" default="rgb(244,107,149)"></property>
+        <property name="subheadingcolor" type="color" label="Sub-Heading-Color" default="white"></property>
+        <property name="headingfontsize" type="String" label="Headng-Font-Size" default="20px"></property>
+        <property name="headingfontweight" type="Integer" label="Heading-Font-Weight" default="900"></property>
+        <property name="subheadingfontsize" type="String" label="Sub-Heading-size" default="14px"></property>
+        <property name="subheadingfontweight" type="Integer" label="Sub-Heading-Weight" default="300"></property>
+        <property name="fontfamily" type="String"  label="Address-Font-Family" default="auto" datasource="fontello,cursive,Salesforce Sans,monospace,sans-serif,auto"></property>
+        <property name="borderradius" type="String" label="Input-Border" default="6px"></property>
+        <!-- Comonent Second -->
+        <!-- Data Insert  -->
+        <property name="contentId" type="ContentReference" filter="cms_image" default="" label="Drop image"></property>
+        <property name="firstname" type="String" default="First Name" label="provide First Name"></property>
+        <property name="lastname" type="String" default="Last Name" label="provide Last Name"></property>
+        <property name="contact" type="String" default="Contact No" label="provide Contact"></property>
+        <property name="emailId" type="String" default="Email" label="provide Your Email"></property>
+        <property name="description" type="String" default="Description" label="provide Department Name"></property>
         <property name="buttonname" type="String" default="Submit" label="Button Name"></property>
         </targetConfig>
     </targetConfigs>

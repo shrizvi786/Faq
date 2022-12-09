@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+        <isExposed>true</isExposed>
+    <masterLabel>ZT login</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+     <targetConfigs>  
+        <targetConfig targets="lightningCommunity__Default">
+        <!--<property name="networkname" type="String" label="Please Provide Your Network Name"/>-->
+        <property name="contentId" type="ContentReference" filter="cms_image" default="" label="Drop image"/>
+        <property name="borderradius" type="String" default="12px" label="Border Radius"></property>
+        <property name="backgroundcolor" type="color" default="rgb(171, 116, 244)" label="Background Color"></property>
+        <property name="signup" type="String"  label="Sign Up Url"></property>
+        <property name="forgot" type="String"  label="Forgot PasswordUrl"></property>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

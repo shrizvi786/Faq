@@ -1,0 +1,12 @@
+.secondform {
+    background-color: lightblue;
+    padding: 20px;
+  }
+.recordedit {
+    display: flex;
+    background-color: white;
+    box-shadow: 5px 10px 18px #888888;
+  }
+  .recordedit_1 {
+    padding: 43px;
+  } 

@@ -1,11 +1,61 @@
 <template>
+  <!-- contact form  one start -->
+  <c-custom-toast auto-close-time="3000">
+  </c-custom-toast>
+  <template if:true={Form_1}>
+   <c-newdesigncontactform
+      firstform={firstform}
+      secondform={secondform}
+      background ={background}
+      headingcolor ={headingcolor}
+      subheadingcolor ={subheadingcolor}
+      fontfamily ={fontfamily}
+      borderradius ={borderradius}
+      headingfontsize ={headingfontsize}
+      headingfontweight ={headingfontweight}
+      subheadingfontsize ={subheadingfontsize}
+      subheadingfontweight ={subheadingfontweight}
+      firstname={firstname}
+      lastname={lastname}
+      contact={contact}
+      enteremail={emailId}
+      description={description}
+      buttonname={buttonname}>
+   </c-newdesigncontactform>
+  </template>
+
+
+    <!-- <c-zehntechform1
+      firstform={firstform}
+      secondform={secondform}
+      overallpadding={overallpadding}
+      heading={heading}
+      subheading={subheading}
+      headeradjustment={headeradjustment}
+      headerfontadjustment={headerfontadjustment}
+      subheaderfontadjustments={subheaderfontadjustments}
+      subheaderfontweightadjustments={subheaderfontweightadjustments}
+      headerfontweightadjustment={headerfontweightadjustment}
+      firstname={firstname}
+      lastname={lastname}
+      contact={contact}
+      enteremail={emailId}
+      description={description}
+      buttonname={buttonname}
+    >
+    </c-zehntechform1> -->
+  <!-- contact form  one end -->
+
+  <!-- contact from two start -->
+  <template if:true={Form_2}>
+    <c-zehntechform2 imageurl={imageUrl}> </c-zehntechform2> 
+  </template>
+  <!-- contact from two end -->
+
+  <!-- <div if:false={secondform}>
   <lightning-card>
     <div slot="title" class="slds-size_6-of-12">
       <p class="headerfontadjustments">
-        <!-- <lightning-icon
-            icon-name="standard:contact"
-            size="small"
-          ></lightning-icon> -->
         {heading}
       </p>
       <p class="subheaderfontadjustments">{subheading}</p>
@@ -43,7 +93,7 @@
             value={Contact}
             onchange={contactChangeVal}
             placeholder={contact}
-            name = "contactUs"
+            name="contactUs"
           ></lightning-input>
         </div>
       </div>
@@ -65,7 +115,7 @@
         <div class="slds-form-element">
           <lightning-input
             value={Description}
-            conchange={contactChangeVal}
+            onchange={contactChangeVal}
             placeholder={description}
             name="message"
           ></lightning-input>
@@ -85,4 +135,41 @@
       </div>
     </div>
   </lightning-card>
+</div> -->
+
+  <!--****************************************Second Form **************-->
+  <!-- <div class="secondform" if:true={secondform}>
+    <div class="recordedit">
+      <div class="slds-col slds-size_6-of-12 recordedit_1">
+        <lightning-record-edit-form
+          object-api-name="Contact"
+          onsuccess={handleSuccess}
+          onsubmit={handleSubmit}
+        >
+          <lightning-messages> </lightning-messages>
+          <lightning-input-field
+            field-name="FirstName"
+            class="shaninput"
+          ></lightning-input-field>
+          <lightning-input-field field-name="LastName"></lightning-input-field>
+          <lightning-input-field field-name="Email"></lightning-input-field>
+          <lightning-input-field
+            field-name="MobilePhone"
+          ></lightning-input-field>
+          <lightning-input-field
+            field-name="Description"
+          ></lightning-input-field>
+          <lightning-button
+            class="slds-m-top_small"
+            type="submit"
+            label="Submit Now"
+          >
+          </lightning-button>
+        </lightning-record-edit-form>
+      </div>
+      <div class="recordedit_1_image">
+        <img src={imageUrl} alt="img" />
+      </div>
+    </div>
+  </div> -->
 </template>

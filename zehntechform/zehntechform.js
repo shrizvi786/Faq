@@ -1,114 +1,91 @@
-import { LightningElement, api } from "lwc";
-import getrecord from "@salesforce/apex/customContactForm.getrecord";
-import { loadStyle } from "lightning/platformResourceLoader";
-import customSR from "@salesforce/resourceUrl/customContactform";
-import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import { LightningElement, api, wire, track } from "lwc";
+// import getrecord from "@salesforce/apex/customContactForm.getrecord";
+// import { loadStyle } from "lightning/platformResourceLoader";
+// import customSR from "@salesforce/resourceUrl/customContactform";
+import getManagedContentByContentKeys from "@salesforce/apex/fileuploadnetwork.getContent";
+import basePath from "@salesforce/community/basePath";
+var array;
 
 export default class Zehntechform extends LightningElement {
-@api overallpadding;
-@api heading;
-@api subheading;
-@api headeradjustment;
-@api headerfontadjustment;
-@api subheaderfontadjustments;
-@api subheaderfontweightadjustments;
-@api headerfontweightadjustment;
-@api firstname;
-@api lastname;
-@api contact;
-@api emailId;
-@api description;
-@api buttonname;
-fname;
-lname;
-contactUs;
-email;
-message;
+  @api background;
+  @api headingcolor;
+  @api subheadingcolor;
+  @api fontfamily;
+  @api borderradius;
+  @api headingfontsize;
+  @api headingfontweight;
+  @api subheadingfontsize;
+  @api subheadingfontweight;
 
-contactChangeVal(event) {
-  if (event.target.name === "fname") {
-    this.firstName = event.target.value;
-    const evt = new ShowToastEvent({
-      title: "Success",
-      message: this.message,
-      variant: "success",
-      mode: "dismissable"
-    });
-    this.dispatchEvent(evt);
-    console.log("evt", evt);
-  }
-  if (event.target.name === "lname") {
-    this.lastName = event.target.value;
-  }
-  if (event.target.name === "contactUs") {
-    this.Contact = event.target.value;
-  }
-  if (event.target.name === "email") {
-    this.email = event.target.value;
-  }
-  if (event.target.name === "message") {
-    this.Description = event.target.value;
-  }
-}
+  @track imageUrl;
+  @api networkname;
+  @api contentId;
+  //
+  @api firstform;
+  @api secondform;
+  @api firstname;
+  @api lastname;
+  @api contact;
+  @api emailId;
+  @api description;
+  @api buttonname;
 
-insertContactAction() {
-  console.log("returnfirstName ", this.firstName);
-  console.log("returnContact ", this.Contact);
-  console.log("returnlastname ", this.lastName);
-  console.log("returnemailID ", this.email);
-  console.log("returndescription ", this.Description);
-  getrecord({
-    Name: this.firstName,
-    contact: this.Contact,
-    lastname: this.lastName,
-    email: this.email,
-    description: this.Description
+  @track Form_1;
+  @track Form_2;
+  fname;
+  lname;
+  contactUs;
+  email;
+  message;
+
+  // Second One
+  handleClick = () => {
+    console.log("You clicked me!");
+    console.log("contentId", this.contentkey);
+  };
+  // CSS Dynamic
+  @wire(getManagedContentByContentKeys, {
+    contentId: "$contentId",
+    page: 0,
+    pageSize: 1,
+    language: "en_US",
+    filterby: "",
+    networkName: array
   })
-    .then((result) => {
-      console.log("firstnmae", result);
-    })
-    .catch((error) => {
-      console.log("firstname", error);
-    });
-}
+  managedContent({ error, data }) {
+    console.log("it entered the function:");
+    console.log("Network", this.networkName);
+    console.log("contentId", this.contentId);
+    if (data) {
+      if (data.source) {
+        console.log("data", data.source);
+        this.imageUrl = basePath + "/sfsites/c" + data.source.url;
+      }
+    } else if (error) {
+      console.log("error:", error);
+      // Handle the error.
+      this.shanError = error;
+    }
+  }
+  renderedCallback() {
+    // Promise.all([loadStyle(this, customSR)]);
+    array = basePath.split("/")[1];
 
-renderedCallback() {
-  Promise.all([loadStyle(this, customSR)]);
-  // Over all Padding
-  this.template
-    .querySelector("lightning-card")
-    .style.setProperty("--my-overallpadding", this.overallpadding);
+    switch (this.secondform) {
+      case "Form_1":
+        this.Form_1 = true;
+        this.Form_2 = false;
+        break;
+      case "Form_2":
+        this.Form_1 = false;
+        this.Form_2 = true;
+        break;
+      default:
+        this.Form_1 = true;
+        break;
+    }
 
-  // Header
-  this.template
-    .querySelector("lightning-card")
-    .style.setProperty("--my-headeradjustment", this.headeradjustment);
-
-  this.template
-    .querySelector("lightning-card")
-    .style.setProperty(
-      "--my-headerfontadjustment",
-      this.headerfontadjustment
-    );
-
-  this.template
-    .querySelector("lightning-card")
-    .style.setProperty(
-      "--my-headerfontweightadjustment",
-      this.headerfontweightadjustment
-    );
-
-  this.template
-    .querySelector("lightning-card")
-    .style.setProperty(
-      "--my-subheaderfontweightadjustment",
-      this.subheaderfontweightadjustments
-    );
-  this.template
-    .querySelector("lightning-card")
-    .style.setProperty(
-      "--my-subheaderfontadjustment",
-      this.subheaderfontadjustments
-    );
-}
+    console.log("form-1",this.Form_1);
+    console.log("for-2",this.Form_2);
+  }
 }

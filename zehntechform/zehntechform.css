@@ -1,4 +1,4 @@
-p.headerfontadjustments {
+ p.headerfontadjustments {
   font-size: var(--my-headerfontadjustment) !important;
   font-weight: var(--my-headerfontweightadjustment) !important;
 }
@@ -6,6 +6,19 @@ p.subheaderfontadjustments {
   font-size: var(--my-subheaderfontadjustment);
   font-weight: var(--my-subheaderfontweightadjustment);
 }
+/*
+.secondform {
+  background-color: lightblue;
+  padding: 20px;
+}
+.recordedit {
+  display: flex;
+  background-color: white;
+  box-shadow: 5px 10px 18px #888888;
+}
+.recordedit_1 {
+  padding: 43px;
+} */
 
 /* .slds-input {
     border: none;

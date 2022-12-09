@@ -1,0 +1,30 @@
+.imgColor {
+    -webkit-filter: grayscale var(--my-grayScale); /* Safari 6.0 - 9.0 */
+    filter: grayscale(1);
+  }
+  
+  .imgColor:hover {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+  }
+  
+  .imgColor1 {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+  }
+  
+  .imgColor1:hover {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: gray;
+  }
+  
+  .imgColor2 {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+  }
+  
+  .imgColor3 {
+    -webkit-filter: grayscale var(--my-grayScale); /* Safari 6.0 - 9.0 */
+    filter: grayscale(1);
+  }
+  

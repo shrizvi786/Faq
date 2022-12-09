@@ -1,0 +1,132 @@
+.maindiv {
+  background-color: var(--my-backgroundcolor);
+
+  /* display: flex;
+justify-content: center;
+align-items: center; */
+  /* height: 620px; */
+}
+.shadow {
+  width: 90%;
+  display: flex;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(24, 31, 75),
+    rgb(48, 56, 102),
+    rgb(24, 31, 75)
+  );
+  box-shadow: rgba(166, 52, 52, 0.3) 0px 19px 38px,
+    rgb(0 0 0 / 22%) 12px 15px 12px;
+}
+
+.subdiv {
+  padding: 108px;
+}
+.halfsection {
+  padding: 108px;
+}
+.paraheading_1 {
+  color: var(--my-headingcolor);
+  font-weight: var(--my-headingfontweight);
+  font-size: var(--my-headingfontsize);
+}
+.paraheading_2 {
+  color: var(--my-subheadingcolor);
+  font-weight: var(--my-subheadingfontweight);
+  font-size: var(--my-subheadingfontsize);
+}
+.halfsectionpara_1 {
+  font-size: var(--my-headingfontsize);
+  font-weight: var(--my-headingfontweight);
+  line-height: 21px;
+  color: var(--my-headingcolor);
+}
+.coll-12 {
+  margin: 0px 0px -42px -11px;
+  width: 352px;
+}
+.address {
+  font-weight: var(--my-subheadingfontweight);
+  font-size: var(--my-subheadingfontsize);
+  margin-top: 6px;
+  color: var(--my-subheadingcolor);
+  font-family: var(--my-fontfamily);
+}
+.button {
+  margin: 32px 0 0 -11px;
+}
+.desc {
+  margin: 23px 0px 0 -1px;
+  width: 100%;
+  height: 90px;
+  background: rgb(79, 92, 136);
+  border: none;
+  border-radius: 6px;
+
+  color: white;
+}
+.desc::placeholder {
+  color: #1d253e;
+  margin: 0 0 0 10px;
+}
+input.desc:focus-visible {
+  outline: none !important;
+  background-color: white;
+  color: gray;
+}
+.social {
+  font-weight: var(--my-headingfontweight);
+  font-size: var(--my-headingfontsize);
+  color: var(--my-headingcolor);
+  margin-top: 35px;
+}
+.socialicon {
+  display: flex;
+  color: white;
+  font-size: 12px;
+}
+
+.rowPadding {
+  padding: 53px 98px;
+}
+
+.containerPadding {
+  padding: 129px;
+}
+
+.rightColMargin {
+  margin: 0;
+}
+
+.textareaWidth {
+  width: 104%;
+}
+
+@media only screen and (max-width: 280px) {
+  .rightColMargin {
+    margin: 0 0 0 -10px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .rowPadding {
+    padding: 53px 10px;
+  }
+
+  .containerPadding {
+    padding: 10px;
+  }
+  .rightColMargin {
+    margin: 0 0 0 -52px;
+  }
+  .textareaWidth {
+    width: 107%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .rightColMargin {
+    margin: 0 0 0 -10px;
+  }
+}
+
